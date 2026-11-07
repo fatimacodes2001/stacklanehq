@@ -20,8 +20,8 @@ const pillPadding = {
 
 export function ClientLogo({ client, size = "md", showName = false }: Props) {
   const imgClass = client.lightBg
-    ? `${heights[size]} w-auto max-w-[160px] object-contain`
-    : `${heights[size]} w-auto max-w-[160px] object-contain opacity-80 transition duration-300 hover:opacity-100`;
+    ? `${heights[size]} w-auto max-w-[220px] object-contain`
+    : `${heights[size]} w-auto max-w-[220px] object-contain opacity-80 transition duration-300 hover:opacity-100`;
 
   return (
     <div className="flex shrink-0 items-center gap-3">

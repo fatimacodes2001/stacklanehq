@@ -10,8 +10,8 @@ export function About() {
         <Reveal>
           <SectionHeader
             label="About us"
-            title="An AI agency with four delivery hubs."
-            description="We are a 10+ person team with 5+ years across Australian and US data, ML, and AI work. We embed in your timezone from the US, Australia, Dubai, and Pakistan."
+            title="A product studio with four delivery hubs."
+            description="We build agentic products and the platforms they need. Over 10 projects delivered. 10+ people, with 5+ years across Australian and US data, ML, and product work. PrevHealth, CHI Technologies, and Dubai Health Authority are among the teams we have worked with. We embed from the US, Australia, Dubai, and Pakistan."
           />
         </Reveal>
 
@@ -43,7 +43,7 @@ export function About() {
             </div>
             <p className="mt-4 text-muted">
               We work in your Slack, your standups, and your timezone.
-              Same senior attention as a top-tier consultancy, at a fraction of the rate.
+              Senior review stays on the agents, the product, and the platform.
             </p>
           </div>
         </Reveal>

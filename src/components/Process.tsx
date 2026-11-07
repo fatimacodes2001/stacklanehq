@@ -12,19 +12,33 @@ export function Process() {
           <SectionHeader
             label="How it works"
             title={`$${siteConfig.demoPrice} USD until you're satisfied. Then we embed.`}
-            description="In fourteen days our engineers work inside your team and leave a working proof of concept: workflows, access, and agent setup you can run. You approve it before any hourly work begins."
+            description="Seven days with our engineers in your team. The proof is an agentic slice: a workflow, a product path, or the platform under it. You accept it before an embedded engagement starts."
             align="center"
           />
         </Reveal>
 
+        <Reveal delay={0.1}>
+          <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-accent/20 bg-surface/80 p-8 text-center backdrop-blur-sm">
+            <p className="font-mono text-xs uppercase tracking-widest text-accent">
+              Why seven days
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              We build with internal tooling and an AI-powered harness on Cursor and Claude Code.
+              The harness holds repo context, scaffolding, checks, and the repetitive path.
+              The week goes into your agents, your product, and the platform under them.
+              That is what makes development seamless. Senior engineers still review the work.
+            </p>
+          </div>
+        </Reveal>
+
         <Stagger className="mt-16 grid gap-8 lg:grid-cols-2" stagger={0.15}>
           {demoWeeks.map((week) => (
-            <StaggerItem key={week.week}>
+            <StaggerItem key={week.label}>
               <div className="card-shine relative rounded-2xl border border-border bg-surface/80 p-8 backdrop-blur-sm">
                 <div className="absolute -left-3 top-8 h-6 w-6 rounded-full bg-accent shadow-[0_0_20px_rgba(34,211,238,0.5)]" />
                 <div className="mb-6 flex items-center gap-4 pl-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 font-mono text-lg font-bold text-accent ring-1 ring-accent/30">
-                    W{week.week}
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-accent/10 px-2 text-center font-mono text-[11px] font-bold leading-tight text-accent ring-1 ring-accent/30">
+                    Days {week.label}
                   </div>
                   <h3 className="text-xl font-semibold">{week.title}</h3>
                 </div>
@@ -44,7 +58,7 @@ export function Process() {
         <Reveal delay={0.2}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-accent/20 bg-surface/60 p-8 backdrop-blur-sm md:p-12">
             <p className="text-center text-lg font-medium">
-              What you have after 14 days
+              What you have after 7 days
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {pocDeliverables.map((item) => (

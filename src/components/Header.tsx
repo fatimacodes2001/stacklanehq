@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { serviceNav } from "@/lib/content";
 import { ContactModal } from "@/components/ContactModal";
 import { StacklaneLogo } from "@/components/StacklaneLogo";
 
 const nav = [
-  { label: "Services", href: "#services" },
   { label: "How it works", href: "#how-it-works" },
   { label: "Case studies", href: "#case-studies" },
   { label: "Pricing", href: "#pricing" },
@@ -40,6 +40,27 @@ export function Header() {
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
+          <div className="group relative">
+            <a
+              href="#services"
+              className="text-sm text-muted transition-colors hover:text-accent"
+            >
+              Services
+            </a>
+            <div className="invisible absolute left-0 top-full z-50 min-w-52 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-xl border border-border bg-surface p-2 shadow-xl">
+                {serviceNav.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-elevated hover:text-accent"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           {nav.map((item) => (
             <a
               key={item.href}

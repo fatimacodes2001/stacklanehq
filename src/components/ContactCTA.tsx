@@ -16,12 +16,11 @@ export function ContactCTA() {
               Get started
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Ready for a working AI proof of concept?
+              Start with an agentic proof.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-              Start with a conversation. ${siteConfig.demoPrice} USD flat for the
-              14-day PoC, until you are satisfied. Then embedded engineers from
-              $30 AUD/hr.
+              A conversation first. ${siteConfig.demoPrice} USD for the 7-day proof,
+              until you are satisfied. Then an embedded team.
             </p>
 
             <div className="relative mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

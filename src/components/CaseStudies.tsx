@@ -1,4 +1,5 @@
 import { caseStudies, getClientById } from "@/lib/content";
+import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { ClientLogo } from "@/components/ClientLogo";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -11,8 +12,8 @@ export function CaseStudies() {
         <Reveal>
           <SectionHeader
             label="Case studies"
-            title="How a 14-day engagement runs."
-            description="Three illustrative patterns: an MCP catalog, repo-to-agent setup, and an AI workflow transformation. These are not named client stories. Real quotes from CHI Technologies and Parramatta City Council stay in Reviews, unchanged."
+            title="Beagle first. Then the platform. Then the product."
+            description="The flagship is Beagle: Claude connected to Slack, Confluence, GitHub, and observability. Next, the Databricks platform delivered with CHI Technologies, drawn as it shipped. Then the full stack an agentic product needs."
           />
         </Reveal>
 
@@ -23,7 +24,13 @@ export function CaseStudies() {
 
             return (
               <StaggerItem key={study.id}>
-                <article className="overflow-hidden rounded-2xl border border-border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:border-accent/20 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]">
+                <article
+                  className={`overflow-hidden rounded-2xl border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)] ${
+                    study.flagship
+                      ? "border-accent/40 hover:border-accent/60"
+                      : "border-border hover:border-accent/20"
+                  }`}
+                >
                   <div className={`grid lg:grid-cols-2 ${reversed ? "lg:[direction:rtl]" : ""}`}>
                     <div
                       className={`border-border p-8 lg:p-10 ${reversed ? "lg:[direction:ltr] lg:border-l" : "lg:border-r"} border-b lg:border-b-0`}
@@ -34,7 +41,7 @@ export function CaseStudies() {
                         </div>
                       ) : (
                         <p className="mb-6 font-mono text-xs uppercase tracking-widest text-accent">
-                          Illustrative pattern
+                          {study.flagship ? "Flagship" : study.client}
                         </p>
                       )}
 
@@ -52,9 +59,6 @@ export function CaseStudies() {
 
                       <h3 className="text-2xl font-bold tracking-tight">{study.headline}</h3>
                       <p className="mt-4 leading-relaxed text-muted">{study.problem}</p>
-                      {study.contact ? (
-                        <p className="mt-4 text-sm text-muted/70">{study.contact}</p>
-                      ) : null}
 
                       <div className="mt-8">
                         <p className="mb-3 font-mono text-xs uppercase tracking-widest text-accent">
@@ -83,7 +87,12 @@ export function CaseStudies() {
                     </div>
 
                     <div className={`bg-surface-elevated/50 p-8 lg:p-10 ${reversed ? "lg:[direction:ltr]" : ""}`}>
-                      <p className="mb-6 font-mono text-xs uppercase tracking-widest text-accent">
+                      <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
+                        Architecture
+                      </p>
+                      <ArchitectureDiagram kind={study.diagram} />
+
+                      <p className="mb-6 mt-10 font-mono text-xs uppercase tracking-widest text-accent">
                         How we did it
                       </p>
                       <ol className="space-y-6">

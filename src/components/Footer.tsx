@@ -21,6 +21,9 @@ export function Footer() {
             <p className="mt-3 text-sm leading-relaxed text-muted">
               {siteConfig.tagline}
             </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              {siteConfig.footerBlurb}
+            </p>
             <p className="mt-2 text-sm text-muted">
               {siteConfig.locations.join(" · ")}
             </p>

@@ -11,12 +11,12 @@ export function Challenge() {
           <Reveal>
             <SectionHeader
               label="Why Stacklane"
-              title="A working proof of concept in 14 days. Then we embed."
-              description="Most firms sell a roadmap and staff it at $150 to $350 per hour. We embed with your team, wire the setup, and show it working before you scale spend."
+              title="A working agentic proof in 7 days. Then we embed."
+              description="Most firms leave a roadmap. We leave something you can run: an agent in a real workflow, on a product and a platform your team can keep."
             />
             <p className="mt-6 text-lg text-muted">
-              We cost less than local Australian, Dubai, and US consultancies.
-              Senior oversight stays on the work. Your timezone. Your tools.
+              Senior review stays on the work. Your timezone. Your tools.
+              The data platform and the app are there because the agents need them.
             </p>
           </Reveal>
 

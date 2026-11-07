@@ -5,6 +5,13 @@ import { siteConfig } from "@/lib/content";
 import { ContactModal } from "@/components/ContactModal";
 import { StacklaneLogo } from "@/components/StacklaneLogo";
 
+const stats = [
+  { value: "7 days", label: "PoC demo go-live" },
+  { value: "$100", label: "Until you're satisfied" },
+  { value: "10+", label: "Projects delivered" },
+  { value: "4 hubs", label: "US · AU · Dubai · PK" },
+];
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
@@ -42,9 +49,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl md:leading-[1.08]"
         >
-          AI, wired into how you work.
+          {siteConfig.heroTitle}
           <br />
-          <span className="animated-gradient-text">A working PoC in 14 days.</span>
+          <span className="animated-gradient-text">{siteConfig.heroAccent}</span>
         </motion.h1>
 
         <motion.p
@@ -77,12 +84,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-16 grid grid-cols-2 gap-6 border-t border-border pt-10 md:grid-cols-4"
         >
-          {[
-            { value: "14 days", label: "PoC demo go-live" },
-            { value: "$100", label: "Until you're satisfied" },
-            { value: "$30+", label: "AUD/hr from" },
-            { value: "4 hubs", label: "US · AU · Dubai · PK" },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label}>
               <div className="font-mono text-2xl font-bold text-accent md:text-3xl">
                 {stat.value}
