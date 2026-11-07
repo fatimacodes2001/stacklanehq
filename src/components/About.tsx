@@ -1,64 +1,60 @@
 import { aboutStats, credentials, siteConfig } from "@/lib/content";
+import { PageSection } from "@/components/PageSection";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 
 export function About() {
   return (
-    <section id="about" className="relative py-24">
-      <div className="section-divider mx-auto mb-24 max-w-6xl" />
-      <div className="mx-auto max-w-6xl px-6">
-        <Reveal>
-          <SectionHeader
-            label="About us"
-            title="A product studio with four delivery hubs."
-            description="We build agentic products and the platforms they need. Over 10 projects delivered. 10+ people, with 5+ years across Australian and US data, ML, and product work. PrevHealth, CHI Technologies, and Dubai Health Authority are among the teams we have worked with. We embed from the US, Australia, Dubai, and Pakistan."
-          />
-        </Reveal>
+    <PageSection id="about" tone="raised">
+      <Reveal>
+        <SectionHeader
+          label="About us"
+          title="A product studio with four delivery hubs."
+          description="We build agentic products and the platforms they need. Over 10 projects delivered. 10+ people, with 5+ years across Australian and US data, ML, and product work. PrevHealth, CHI Technologies, and Dubai Health Authority are among the teams we have worked with. We embed from the US, Australia, Dubai, and Pakistan."
+        />
+      </Reveal>
 
-        <Stagger className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5" stagger={0.08}>
-          {aboutStats.map((stat) => (
-            <StaggerItem key={stat.label}>
-              <div className="rounded-2xl border border-border bg-surface/80 p-6 text-center backdrop-blur-sm">
-                <div className="font-mono text-3xl font-bold text-accent">{stat.value}</div>
-                <div className="mt-2 text-sm text-muted">{stat.label}</div>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-
-        <Reveal delay={0.15}>
-          <div className="mt-12 rounded-2xl border border-border bg-surface/80 p-8 backdrop-blur-sm">
-            <p className="font-mono text-xs uppercase tracking-widest text-accent">
-              Global delivery hubs
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {siteConfig.locations.map((loc) => (
-                <span
-                  key={loc}
-                  className="rounded-full border border-accent/20 bg-accent/5 px-5 py-2 text-sm font-medium"
-                >
-                  {loc}
-                </span>
-              ))}
-            </div>
-            <p className="mt-4 text-muted">
-              We work in your Slack, your standups, and your timezone.
-              Senior review stays on the agents, the product, and the platform.
-            </p>
+      <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-5">
+        {aboutStats.map((stat) => (
+          <div key={stat.label} className="bg-background/60 px-4 py-5 text-center">
+            <dt className="font-mono text-2xl font-bold text-accent">{stat.value}</dt>
+            <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
           </div>
-        </Reveal>
+        ))}
+      </dl>
 
-        <Stagger className="mt-8 grid gap-4 sm:grid-cols-2" stagger={0.06}>
-          {credentials.map((cred) => (
-            <StaggerItem key={cred}>
-              <div className="flex items-start gap-3 rounded-xl border border-border bg-surface-elevated/80 p-5 backdrop-blur-sm">
-                <span className="mt-0.5 text-accent">✓</span>
-                <span className="text-muted">{cred}</span>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </div>
-    </section>
+      <Reveal delay={0.1}>
+        <div className="mt-8 rounded-2xl border border-border bg-background/40 p-6 md:p-8">
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">
+            Global delivery hubs
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {siteConfig.locations.map((loc) => (
+              <span
+                key={loc}
+                className="rounded-full border border-accent/20 bg-accent/5 px-5 py-2 text-sm font-medium"
+              >
+                {loc}
+              </span>
+            ))}
+          </div>
+          <p className="mt-4 max-w-3xl text-muted">
+            We work in your Slack, your standups, and your timezone.
+            Senior review stays on the agents, the product, and the platform.
+          </p>
+        </div>
+      </Reveal>
+
+      <Stagger className="mt-6 grid gap-3 sm:grid-cols-2" stagger={0.05}>
+        {credentials.map((cred) => (
+          <StaggerItem key={cred} className="h-full">
+            <div className="flex h-full items-start gap-3 rounded-xl border border-border bg-background/40 p-4">
+              <span className="mt-0.5 text-accent">✓</span>
+              <span className="text-sm leading-relaxed text-muted">{cred}</span>
+            </div>
+          </StaggerItem>
+        ))}
+      </Stagger>
+    </PageSection>
   );
 }

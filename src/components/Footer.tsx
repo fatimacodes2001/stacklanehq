@@ -5,6 +5,8 @@ const footerNav = [
   { label: "Services", href: "#services" },
   { label: "How it works", href: "#how-it-works" },
   { label: "Case studies", href: "#case-studies" },
+  { label: "Why us", href: "#why-us" },
+  { label: "Reviews", href: "#reviews" },
   { label: "Pricing", href: "#pricing" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -12,8 +14,7 @@ const footerNav = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/80 bg-surface/30 py-14 backdrop-blur-sm">
-      <div className="section-divider mx-auto mb-14 max-w-6xl" />
+    <footer className="relative border-t border-border/80 bg-surface/70 py-14">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 md:grid-cols-3">
           <div>

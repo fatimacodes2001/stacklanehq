@@ -17,15 +17,15 @@ export default function Home() {
     <>
       <AnimatedBackground />
       <Header />
-      <main>
+      <main id="top">
         <Hero />
         <ClientMarquee />
         <Services />
         <Process />
         <CaseStudies />
         <Challenge />
-        <Pricing />
         <Testimonials />
+        <Pricing />
         <About />
         <ContactCTA />
       </main>

@@ -1,123 +1,105 @@
 import { caseStudies, getClientById } from "@/lib/content";
 import { ArchitectureDiagram } from "@/components/ArchitectureDiagram";
 import { ClientLogo } from "@/components/ClientLogo";
-import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
+import { PageSection } from "@/components/PageSection";
+import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="relative py-24">
-      <div className="section-divider mx-auto mb-24 max-w-6xl" />
-      <div className="mx-auto max-w-6xl px-6">
-        <Reveal>
-          <SectionHeader
-            label="Case studies"
-            title="Beagle first. Then the platform. Then the product."
-            description="The flagship is Beagle: Claude connected to Slack, Confluence, GitHub, and observability. Next, the Databricks platform delivered with CHI Technologies, drawn as it shipped. Then the full stack an agentic product needs."
-          />
-        </Reveal>
+    <PageSection id="case-studies" tone="raised">
+      <Reveal>
+        <SectionHeader
+          label="Case studies"
+          title="Beagle first. Then the platform. Then the product."
+          description="The flagship is Beagle: Claude connected to Slack, Confluence, GitHub, and observability. Next, the Databricks platform delivered with CHI Technologies, drawn as it shipped. Then the full stack an agentic product needs."
+        />
+      </Reveal>
 
-        <Stagger className="mt-16 space-y-16" stagger={0.2}>
-          {caseStudies.map((study, index) => {
-            const client = study.clientId ? getClientById(study.clientId) : undefined;
-            const reversed = index % 2 === 1;
-
-            return (
-              <StaggerItem key={study.id}>
-                <article
-                  className={`overflow-hidden rounded-2xl border bg-surface/80 backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)] ${
-                    study.flagship
-                      ? "border-accent/40 hover:border-accent/60"
-                      : "border-border hover:border-accent/20"
-                  }`}
-                >
-                  <div className={`grid lg:grid-cols-2 ${reversed ? "lg:[direction:rtl]" : ""}`}>
-                    <div
-                      className={`border-border p-8 lg:p-10 ${reversed ? "lg:[direction:ltr] lg:border-l" : "lg:border-r"} border-b lg:border-b-0`}
-                    >
-                      {client ? (
-                        <div className="mb-6">
-                          <ClientLogo client={client} size="lg" />
-                        </div>
-                      ) : (
-                        <p className="mb-6 font-mono text-xs uppercase tracking-widest text-accent">
-                          {study.flagship ? "Flagship" : study.client}
-                        </p>
-                      )}
-
-                      <div className="mb-4 flex flex-wrap gap-2">
-                        <span className="rounded-full border border-border bg-surface-elevated px-3 py-1 font-mono text-xs text-muted">
-                          {study.industry}
-                        </span>
-                        <span className="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-xs text-accent">
-                          {study.cloud}
-                        </span>
-                        <span className="rounded-full border border-border bg-surface-elevated px-3 py-1 font-mono text-xs text-muted">
-                          {study.duration}
-                        </span>
-                      </div>
-
-                      <h3 className="text-2xl font-bold tracking-tight">{study.headline}</h3>
-                      <p className="mt-4 leading-relaxed text-muted">{study.problem}</p>
-
-                      <div className="mt-8">
-                        <p className="mb-3 font-mono text-xs uppercase tracking-widest text-accent">
-                          Outcomes
-                        </p>
-                        <ul className="space-y-2">
-                          {study.results.map((result) => (
-                            <li key={result} className="flex items-start gap-2 text-sm">
-                              <span className="text-accent">✓</span>
-                              {result}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {study.stack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded-md border border-border bg-background/50 px-2.5 py-1 font-mono text-xs text-muted"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className={`bg-surface-elevated/50 p-8 lg:p-10 ${reversed ? "lg:[direction:ltr]" : ""}`}>
-                      <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
-                        Architecture
-                      </p>
-                      <ArchitectureDiagram kind={study.diagram} />
-
-                      <p className="mb-6 mt-10 font-mono text-xs uppercase tracking-widest text-accent">
-                        How we did it
-                      </p>
-                      <ol className="space-y-6">
-                        {study.approach.map((step, stepIndex) => (
-                          <li key={step.phase} className="flex gap-4">
-                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 font-mono text-sm font-bold text-accent ring-1 ring-accent/30">
-                              {stepIndex + 1}
-                            </div>
-                            <div>
-                              <h4 className="font-semibold">{step.phase}</h4>
-                              <p className="mt-1 text-sm leading-relaxed text-muted">
-                                {step.detail}
-                              </p>
-                            </div>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
+      <div className="mt-12 space-y-10">
+        {caseStudies.map((study) => {
+          const client = study.clientId ? getClientById(study.clientId) : undefined;
+          return (
+            <article
+              key={study.id}
+              className={`overflow-hidden rounded-2xl border bg-background/40 ${
+                study.flagship ? "border-accent/40" : "border-border"
+              }`}
+            >
+              <div className="border-b border-border p-6 md:p-8">
+                <div className="flex flex-wrap items-center gap-4">
+                  {client ? (
+                    <ClientLogo client={client} size="sm" />
+                  ) : (
+                    <p className="font-mono text-xs uppercase tracking-widest text-accent">
+                      {study.flagship ? "Flagship" : study.client}
+                    </p>
+                  )}
+                  <div className="flex flex-wrap gap-2">
+                    <span className="rounded-full border border-border bg-surface-elevated px-3 py-1 font-mono text-xs text-muted">
+                      {study.industry}
+                    </span>
+                    <span className="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 font-mono text-xs text-accent">
+                      {study.cloud}
+                    </span>
+                    <span className="rounded-full border border-border bg-surface-elevated px-3 py-1 font-mono text-xs text-muted">
+                      {study.duration}
+                    </span>
                   </div>
-                </article>
-              </StaggerItem>
-            );
-          })}
-        </Stagger>
+                </div>
+                <h3 className="mt-5 max-w-3xl text-2xl font-bold tracking-tight md:text-3xl">
+                  {study.headline}
+                </h3>
+                <p className="mt-3 max-w-3xl leading-relaxed text-muted">{study.problem}</p>
+              </div>
+
+              <div className="border-b border-border bg-surface/40 p-6 md:p-8">
+                <ArchitectureDiagram kind={study.diagram} />
+              </div>
+
+              <div className="grid lg:grid-cols-2">
+                <div className="border-b border-border p-6 md:p-8 lg:border-b-0 lg:border-r">
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent">Outcomes</p>
+                  <ul className="mt-4 space-y-3">
+                    {study.results.map((result) => (
+                      <li key={result} className="flex items-start gap-2 text-sm leading-relaxed">
+                        <span className="mt-0.5 text-accent">✓</span>
+                        {result}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {study.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md border border-border bg-surface-elevated px-2.5 py-1 font-mono text-xs text-muted"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="p-6 md:p-8">
+                  <p className="font-mono text-xs uppercase tracking-widest text-accent">How we did it</p>
+                  <ol className="mt-4 space-y-5">
+                    {study.approach.map((step, stepIndex) => (
+                      <li key={step.phase} className="flex gap-4">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 font-mono text-sm font-bold text-accent ring-1 ring-accent/30">
+                          {stepIndex + 1}
+                        </div>
+                        <div>
+                          <h4 className="font-semibold">{step.phase}</h4>
+                          <p className="mt-1 text-sm leading-relaxed text-muted">{step.detail}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
-    </section>
+    </PageSection>
   );
 }
