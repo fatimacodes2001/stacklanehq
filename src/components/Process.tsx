@@ -12,7 +12,7 @@ export function Process() {
           <SectionHeader
             label="How it works"
             title={`$${siteConfig.demoPrice} USD until you're satisfied. Then we embed.`}
-            description="In fourteen days our engineers work inside your team and go live with a PoC demo of your migrated stack. No discovery phase. No slide deck. Runnable infrastructure in your cloud account."
+            description="In fourteen days our engineers work inside your team and leave a working proof of concept: workflows, access, and agent setup you can run. You approve it before any hourly work begins."
             align="center"
           />
         </Reveal>
@@ -44,7 +44,7 @@ export function Process() {
         <Reveal delay={0.2}>
           <div className="mt-12 overflow-hidden rounded-2xl border border-accent/20 bg-surface/60 p-8 backdrop-blur-sm md:p-12">
             <p className="text-center text-lg font-medium">
-              Your PoC demo deliverables after 14 days
+              What you have after 14 days
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {pocDeliverables.map((item) => (

@@ -42,9 +42,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl md:leading-[1.08]"
         >
-          Your stack migrated.
+          AI, wired into how you work.
           <br />
-          <span className="animated-gradient-text">PoC demo live in 14 days.</span>
+          <span className="animated-gradient-text">A working PoC in 14 days.</span>
         </motion.h1>
 
         <motion.p

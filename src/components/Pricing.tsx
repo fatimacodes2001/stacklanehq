@@ -11,8 +11,8 @@ export function Pricing() {
         <Reveal>
           <SectionHeader
             label="Pricing"
-            title="A fraction of what local, Dubai, and US firms charge."
-            description="Australian, Dubai, and US consultancies typically bill $150 to $350 per hour for senior data engineers. Our embedded rates start at $30 AUD/hr. Same expertise. Much lower cost."
+            title="AI agency rates. A fraction of local firms."
+            description="Australian, Dubai, and US consultancies often bill $150 to $350 per hour. Embedded AI work starts at $30 AUD/hr after a $100 USD proof of concept."
             align="center"
           />
         </Reveal>
@@ -29,9 +29,9 @@ export function Pricing() {
               </div>
               <p className="mt-2 text-sm font-medium">Until you&apos;re satisfied</p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Flat fee for the 14-day PoC: stack migrated, live demo go-live,
-                MLOps pipeline, and Agentic Ops. Our engineers embedded alongside
-                yours. You approve before any hourly work begins.
+                Flat fee for the 14-day PoC. You get a working AI setup with
+                our engineers embedded alongside yours. You approve it before
+                any hourly work begins.
               </p>
               <ul className="mt-4 space-y-2 text-sm text-muted">
                 <li className="flex gap-2"><span className="text-accent">✓</span> PoC go-live in 14 days</li>

@@ -11,8 +11,8 @@ export function Testimonials() {
         <Reveal>
           <SectionHeader
             label="Reviews"
-            title="What clients say after the PoC demo"
-            description="Real feedback from engineering and digital leaders who worked with our embedded team."
+            title="What clients have actually said"
+            description="These two quotes are unchanged. We do not add names, titles, or lines a client did not give us."
           />
         </Reveal>
 

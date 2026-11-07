@@ -16,11 +16,11 @@ export function ContactCTA() {
               Get started
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Ready to see your stack migrated in 14 days?
+              Ready for a working AI proof of concept?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-              Start with a conversation. ${siteConfig.demoPrice} USD flat until you are
-              satisfied with the PoC demo. Then scale with embedded engineers from
+              Start with a conversation. ${siteConfig.demoPrice} USD flat for the
+              14-day PoC, until you are satisfied. Then embedded engineers from
               $30 AUD/hr.
             </p>
 

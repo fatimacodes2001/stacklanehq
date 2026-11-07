@@ -11,13 +11,12 @@ export function Challenge() {
           <Reveal>
             <SectionHeader
               label="Why Stacklane"
-              title="Your last vendor quoted half a year. We deliver a PoC in 14 days."
-              description="Most firms sell roadmaps and rotate juniors at $150 to $350 per hour. We embed senior engineers in your team, use intelligent tooling to accelerate delivery, and prove value with a live PoC demo before you scale spend."
+              title="A working proof of concept in 14 days. Then we embed."
+              description="Most firms sell a roadmap and staff it at $150 to $350 per hour. We embed with your team, wire the setup, and show it working before you scale spend."
             />
             <p className="mt-6 text-lg text-muted">
-              We are significantly more cost effective than local Australian,
-              Dubai, and US consultancies. Same senior talent. Fraction of the
-              rate. Your timezone. Your cloud account.
+              We cost less than local Australian, Dubai, and US consultancies.
+              Senior oversight stays on the work. Your timezone. Your tools.
             </p>
           </Reveal>
 

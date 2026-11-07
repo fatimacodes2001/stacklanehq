@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-border/60 pt-8 text-center text-xs text-muted">
-          © {new Date().getFullYear()} {siteConfig.name}. Enterprise Data & ML Consulting.
+          © {new Date().getFullYear()} {siteConfig.name}. {siteConfig.footerCredit}.
         </p>
       </div>
     </footer>

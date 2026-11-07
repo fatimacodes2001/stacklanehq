@@ -76,10 +76,9 @@ export function ContactModal({
             <p className="mt-3 text-sm leading-relaxed text-muted">
               We charge just{" "}
               <strong className="text-foreground">${siteConfig.demoPrice} USD</strong>{" "}
-              for the 14-day PoC until you&apos;re satisfied. You get a live demo
-              of your migrated stack with our engineers embedded in your team.
-              After that, hourly rates well below local AU, Dubai, and US
-              consultancies.
+              for the 14-day PoC until you&apos;re satisfied. You get a working AI
+              setup with our engineers embedded in your team. After that, hourly
+              rates well below local AU, Dubai, and US consultancies.
             </p>
 
             <div className="mt-6 space-y-3">

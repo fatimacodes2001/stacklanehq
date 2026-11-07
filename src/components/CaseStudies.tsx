@@ -11,14 +11,14 @@ export function CaseStudies() {
         <Reveal>
           <SectionHeader
             label="Case studies"
-            title="Real PoC migrations. Real timelines. Real demos."
-            description="How we helped enterprise teams go live with a PoC demo of their migrated stack in under two weeks, with our engineers embedded alongside theirs."
+            title="How a 14-day engagement runs."
+            description="Three illustrative patterns: an MCP catalog, repo-to-agent setup, and an AI workflow transformation. These are not named client stories. Real quotes from CHI Technologies and Parramatta City Council stay in Reviews, unchanged."
           />
         </Reveal>
 
         <Stagger className="mt-16 space-y-16" stagger={0.2}>
           {caseStudies.map((study, index) => {
-            const client = getClientById(study.clientId);
+            const client = study.clientId ? getClientById(study.clientId) : undefined;
             const reversed = index % 2 === 1;
 
             return (
@@ -28,10 +28,14 @@ export function CaseStudies() {
                     <div
                       className={`border-border p-8 lg:p-10 ${reversed ? "lg:[direction:ltr] lg:border-l" : "lg:border-r"} border-b lg:border-b-0`}
                     >
-                      {client && (
+                      {client ? (
                         <div className="mb-6">
                           <ClientLogo client={client} size="lg" />
                         </div>
+                      ) : (
+                        <p className="mb-6 font-mono text-xs uppercase tracking-widest text-accent">
+                          Illustrative pattern
+                        </p>
                       )}
 
                       <div className="mb-4 flex flex-wrap gap-2">
@@ -48,7 +52,9 @@ export function CaseStudies() {
 
                       <h3 className="text-2xl font-bold tracking-tight">{study.headline}</h3>
                       <p className="mt-4 leading-relaxed text-muted">{study.problem}</p>
-                      <p className="mt-4 text-sm text-muted/70">{study.contact}</p>
+                      {study.contact ? (
+                        <p className="mt-4 text-sm text-muted/70">{study.contact}</p>
+                      ) : null}
 
                       <div className="mt-8">
                         <p className="mb-3 font-mono text-xs uppercase tracking-widest text-accent">

@@ -2,9 +2,10 @@ export const siteConfig = {
   name: "Stacklane",
   domain: "stacklanehq.com",
   url: "https://stacklanehq.com",
-  tagline: "Enterprise data & ML consulting",
+  tagline: "AI agency",
+  metaTitle: "Stacklane | AI agency",
   description:
-    "PoC go-live in 14 days with your stack migrated and demo-ready. Embedded engineers across the US, Australia, Dubai, and Pakistan at a fraction of local consultancy rates.",
+    "Stacklane is an AI agency. A working proof of concept in 14 days for $100 USD, then embedded engineers from $30 AUD/hr across the US, Australia, Dubai, and Pakistan.",
   contactEmail: "stacklaneorg@gmail.com",
   contactPhone: "+61435801815",
   contactPhoneDisplay: "+61 435 801 815",
@@ -13,44 +14,45 @@ export const siteConfig = {
   demoDuration: "14 days",
   pocDuration: "14 days",
   heroDescription:
-    "We embed expert engineers in your team and use our AI-native tooling, specialised for data engineering workflows across Databricks lakehouse migrations, MLOps pipelines, and Agentic Ops.",
+    "We embed with your team and put a working AI proof of concept in your hands in 14 days. Then we stay on, at a fraction of local consultancy rates.",
+  footerCredit: "AI agency",
 } as const;
 
 export const pricingTiers = [
   {
     level: "Mid-level",
     rate: 30,
-    title: "Pipeline & platform engineers",
+    title: "AI workflow engineers",
     description:
-      "Databricks pipeline development, PySpark transformations, data quality checks, and medallion layer builds under senior guidance.",
+      "Hands-on implementation of skills, workflows, and tool wiring, delivered under senior guidance.",
     includes: [
-      "PySpark and Delta Lake pipelines",
-      "Bronze / silver / gold layers",
-      "dbt and orchestration support",
+      "Skill and workflow implementation",
+      "Repo and tool wiring",
+      "Guided agent setup",
     ],
   },
   {
     level: "Senior",
     rate: 40,
-    title: "Lead engineers & architects",
+    title: "MCP and agent leads",
     description:
-      "End-to-end feature extraction pipelines, MLOps with MLflow, feature store design, and batch or real-time inference endpoints.",
+      "MCP lookup and wiring, GitHub and GitLab connected to Cursor and Claude, and agent workflows the team can run.",
     includes: [
-      "Feature store architecture",
-      "MLflow CI/CD and model registry",
-      "Batch and real-time inferencing",
+      "MCP server selection and wiring",
+      "GitHub and GitLab to Cursor and Claude",
+      "Agent workflow design",
     ],
   },
   {
     level: "Principal",
     rate: 70,
-    title: "Strategic & platform leadership",
+    title: "AI transformation leads",
     description:
-      "Large-scale feature store strategy, multi-cloud architecture, Agentic Ops design, and production hardening across AWS and GCP.",
+      "Org setup for success: skills, MCP servers, repo access, and the operating model your teams keep after the PoC.",
     includes: [
-      "Platform and lakehouse architecture",
-      "Agentic Ops and observability",
-      "Team embedding and handover",
+      "AI operating model",
+      "Org-wide skills and access",
+      "Embedding and handover",
     ],
   },
 ] as const;
@@ -101,86 +103,127 @@ export const clients: ClientLogo[] = [
 
 export const caseStudies = [
   {
-    id: "pcc",
-    client: "Parramatta City Council",
-    clientId: "pcc",
-    headline: "Council legacy data to GCP PoC demo in 14 days",
-    industry: "Government · Public Sector",
-    cloud: "GCP",
+    id: "mcp-catalog",
+    client: "Illustrative pattern",
+    clientId: "",
+    headline: "An MCP catalog the team can look up and wire",
+    industry: "Illustrative pattern",
+    cloud: "MCP",
     duration: "14 day PoC",
-    contact: "Jack Wills, Chief Digital Officer",
+    contact: "",
     problem:
-      "Council data lived across twelve disconnected systems: SQL Server, SaaS exports, and manual spreadsheets. Reporting took weeks. There was no single source of truth, and pipeline failures were discovered by staff, not by monitoring.",
+      "People install whichever MCP server is trending. Nobody owns lookup, authentication, or which server is safe to connect to Cursor and Claude. The result is a pile of half-wired tools.",
     approach: [
       {
-        phase: "Discovery and mapping",
+        phase: "Lookup",
         detail:
-          "Catalogued all source systems, data owners, and downstream reports. Identified 4 critical datasets blocking daily operations.",
+          "List the jobs the team actually runs, then look up MCP servers that match those jobs. Drop anything that cannot be authenticated or supported.",
       },
       {
-        phase: "Platform stand-up",
+        phase: "Shortlist",
         detail:
-          "Provisioned Databricks on GCP with Unity Catalog for governance. Configured IAM, VPC peering, and encrypted GCS landing zones.",
+          "Keep a short catalog: what each server does, which system it touches, and who is allowed to use it.",
       },
       {
-        phase: "Medallion migration",
+        phase: "Wiring",
         detail:
-          "Bronze: automated ingest from SQL Server, API feeds, and CSV drops. Silver: deduplication, PII masking, schema enforcement. Gold: analytics-ready tables for Tableau and internal dashboards.",
+          "Connect the shortlisted servers to Cursor and Claude with the right credentials and scope. One path, not a different setup per person.",
       },
       {
-        phase: "Agentic Ops layer",
+        phase: "Handover",
         detail:
-          "Deployed monitoring and alerting to track pipeline health and detect schema drift early. The team gets clear signals before issues reach downstream consumers.",
+          "Leave a catalog and a rule for adding the next server, so the team can extend it without starting over.",
       },
     ],
     results: [
-      "PoC go-live in 14 days with a demo of the migrated stack",
-      "Daily council reports automated in the PoC (previously 3-day manual process)",
-      "Working demo proved the architecture before full production rollout",
-      "Unity Catalog satisfies internal audit and privacy requirements",
+      "A shortlist of MCP servers matched to real work",
+      "Auth and wiring into Cursor and Claude",
+      "A catalog the team can extend",
+      "One shared path for the next server",
     ],
-    stack: ["GCP", "Databricks", "Delta Lake", "PySpark", "Unity Catalog", "Delta Live Tables"],
+    stack: ["MCP", "Cursor", "Claude", "Auth", "Catalog"],
   },
   {
-    id: "chi",
-    client: "CHI Technologies",
-    clientId: "chi",
-    headline: "Fragmented AWS ML to Databricks PoC in 10 days",
-    industry: "Technology · Enterprise",
-    cloud: "AWS",
-    duration: "10 day PoC",
-    contact: "Ahmad Hassan Chaudhry, Head of Engineering",
+    id: "repo-to-agent",
+    client: "Illustrative pattern",
+    clientId: "",
+    headline: "GitHub and GitLab repos connected to Cursor and Claude",
+    industry: "Illustrative pattern",
+    cloud: "Repos",
+    duration: "14 day PoC",
+    contact: "",
     problem:
-      "ML experiments ran in isolated SageMaker notebooks with no tracking. A previous systems integrator quoted six months and $280K for a unified platform. Models rarely reached production. The gap between experiment and deploy was months.",
+      "Source code lives in GitHub or GitLab. The AI tools live in another login. Agents cannot see the repo, and every engineer wires access a different way.",
     approach: [
       {
-        phase: "Infrastructure provisioning",
+        phase: "Access map",
         detail:
-          "Stood up Databricks workspace on AWS with VPC endpoints, S3-backed storage, and cluster policies. Demo-ready from day one.",
+          "Confirm which GitHub or GitLab projects matter, who owns them, and what an agent is allowed to read or change.",
       },
       {
-        phase: "Data lake migration",
+        phase: "Connect",
         detail:
-          "Converted existing S3 parquet datasets to Delta Lake with PySpark. Built bronze, silver, and gold pipelines with automated schema evolution and data quality checks.",
+          "Connect those repos to Cursor and Claude with scoped credentials. Same projects, same permissions, for the people who need them.",
       },
       {
-        phase: "MLOps pipeline",
+        phase: "First workflow",
         detail:
-          "Integrated MLflow for experiment tracking and model registry. Built CI/CD pipelines for automated training, validation, and deployment to staging endpoints.",
+          "Run one real task through the connection: a review, a change, or a lookup the team already does by hand.",
       },
       {
-        phase: "Feature store and inference",
+        phase: "Repeatable setup",
         detail:
-          "Large-scale feature store with end-to-end extraction pipelines. Batch inferencing for nightly scoring and real-time endpoints for online predictions with offline/online parity.",
+          "Write the steps for the next repository so the second repo does not become a new project.",
       },
     ],
     results: [
-      "PoC demo live in 10 days (vs. 6-month SI quote)",
-      "Working MLflow pipelines proved the platform before full production scale",
-      "Experiment-to-production path validated in the PoC environment",
-      "Infrastructure cost reduced 40% vs. previous SageMaker setup",
+      "Repos connected with the right scope",
+      "Cursor and Claude pointed at the same projects",
+      "A first workflow proven on real code",
+      "A repeatable path for the next repository",
     ],
-    stack: ["AWS", "Databricks", "MLflow", "PySpark", "Feature Store", "Batch and Real-time Inference"],
+    stack: ["GitHub", "GitLab", "Cursor", "Claude", "Repo access"],
+  },
+  {
+    id: "workflow-transformation",
+    client: "Illustrative pattern",
+    clientId: "",
+    headline: "A manual process rebuilt as an agent workflow",
+    industry: "Illustrative pattern",
+    cloud: "Workflows",
+    duration: "14 day PoC",
+    contact: "",
+    problem:
+      "A business process still runs on tickets, copy-paste, and tribal knowledge. Leadership wants AI, but there is no skill library, no access model, and no owner for how agents should work.",
+    approach: [
+      {
+        phase: "Pick one workflow",
+        detail:
+          "Choose a single process with a clear start, a clear finish, and a person who feels the delay. Leave the rest of the backlog alone.",
+      },
+      {
+        phase: "Skills and access",
+        detail:
+          "Write the skills the agent needs, and grant repo and tool access only for that workflow.",
+      },
+      {
+        phase: "Agent workflow",
+        detail:
+          "Break the work into steps a person can review. The agent drafts, looks up, or prepares. A human still approves the outcome.",
+      },
+      {
+        phase: "Prove it",
+        detail:
+          "Run the workflow on live work during the 14 days and hand the team the skills, access notes, and operating steps.",
+      },
+    ],
+    results: [
+      "One priority workflow mapped and rebuilt",
+      "Skills and guardrails the team can reuse",
+      "Agent steps a person can review",
+      "A proof the organisation can choose to scale",
+    ],
+    stack: ["Skills", "MCP", "Agent workflows", "Repo access", "Handover"],
   },
 ] as const;
 
@@ -205,48 +248,48 @@ export const testimonials = [
 
 export const nichePillars = [
   {
-    id: "data-engineering",
-    title: "Large-Scale Data Engineering",
-    subtitle: "Lakehouses on AWS and GCP",
+    id: "transformation",
+    title: "AI-driven business transformation",
+    subtitle: "One workflow at a time",
     description:
-      "We stand up enterprise Databricks platforms with medallion architecture, Delta Live Tables, and Unity Catalog. Full stack migration in weeks, not the six-month cycle your last vendor quoted.",
-    stack: ["Databricks", "PySpark", "AWS", "GCP", "Delta Lake", "dbt"],
-    icon: "layers",
+      "We take a process your team still does by hand and turn it into a working AI workflow. You see it run in the proof of concept, before you commit to a wider rollout.",
+    stack: ["Workflow design", "Skills", "Human review", "Handover"],
+    icon: "transform",
     bottlenecks: [
-      "Data silos across twelve or more source systems",
-      "Fragile batch pipelines that fail silently overnight",
-      "Legacy ETL debt blocking new data products",
-      "No governance or audit trail for regulated industries",
+      "AI strategy with no working process behind it",
+      "Copy-paste work that never gets a system",
+      "Pilots that die after the slide deck",
+      "No owner for how agents should behave",
     ],
   },
   {
-    id: "mlops",
-    title: "MLOps & Feature Engineering",
-    subtitle: "From notebook to production",
+    id: "mcp-wiring",
+    title: "MCP lookup and wiring",
+    subtitle: "GitHub and GitLab to Cursor and Claude",
     description:
-      "Custom tooling on Databricks, MLflow, AWS, and GCP. Large-scale feature stores, end-to-end extraction pipelines, and batch and real-time inference with offline/online parity.",
-    stack: ["MLflow", "Feature Store", "PySpark", "SageMaker", "Vertex AI", "Real-time Inference"],
-    icon: "pipeline",
+      "We look up the MCP servers that match your work, then wire them up. GitHub and GitLab repos connect to Cursor and Claude so agents can see the code and tools you already use.",
+    stack: ["MCP", "GitHub", "GitLab", "Cursor", "Claude"],
+    icon: "mcp",
     bottlenecks: [
-      "Models stuck in notebooks with no production path",
-      "No experiment tracking or reproducibility",
-      "Training and serving skew across environments",
-      "Months between experiment and deployed model",
+      "MCP servers installed with no owner",
+      "Repos and AI tools in separate logins",
+      "Credentials shared in chat threads",
+      "Every engineer wiring access differently",
     ],
   },
   {
-    id: "agentic-ops",
-    title: "Agentic Ops",
-    subtitle: "Autonomous data and ML operations",
+    id: "org-setup",
+    title: "Org setup for success",
+    subtitle: "Skills, servers, access, workflows",
     description:
-      "Workflows that monitor pipelines, surface data quality issues, and automate runbooks. Your ops team gets force-multipliers, not another dashboard to babysit.",
-    stack: ["Agent workflows", "Runbook automation", "Observability", "Pipeline monitoring"],
-    icon: "agent",
+      "We set up the organisation around the tools: skills, MCP servers, repo access, and agent workflows. The PoC leaves a setup your team can keep running.",
+    stack: ["Skills", "MCP servers", "Repo access", "Agent workflows"],
+    icon: "org",
     bottlenecks: [
-      "Manual runbooks and on-call firefighting",
-      "Silent model degradation in production",
-      "Schema drift breaking downstream consumers",
-      "Pipeline failures discovered too late",
+      "No shared skill library",
+      "Repo access that does not match the work",
+      "Agents with no review step",
+      "A pilot that only one person understands",
     ],
   },
 ] as const;
@@ -254,75 +297,74 @@ export const nichePillars = [
 export const demoWeeks = [
   {
     week: 1,
-    title: "Audit, migrate, and foundation",
+    title: "Map the work and the access",
     items: [
-      "Audit existing landscape and identify bottlenecks",
-      "Provision Databricks workspace on AWS or GCP",
-      "Medallion architecture: bronze, silver, gold",
-      "Ingest pipelines with our engineers embedded in your team",
+      "Pick the workflow, repos, and tools that matter first",
+      "Look up MCP servers that fit that work",
+      "Confirm GitHub or GitLab access and who may use it",
+      "Draft the skills and review steps with your team",
     ],
   },
   {
     week: 2,
-    title: "PoC go-live and live demo",
+    title: "Wire it and show it working",
     items: [
-      "Custom MLOps pipeline with MLflow integration",
-      "Feature store and end-to-end extraction pipelines",
-      "Batch and real-time inference demo endpoints",
-      "Live demo of your migrated stack, handover and walkthrough",
+      "Connect repos and MCP servers to Cursor and Claude",
+      "Stand up the agent workflow with human review",
+      "Run it on real work, not a sample slide",
+      "Hand over skills, access notes, and the live walkthrough",
     ],
   },
 ] as const;
 
 export const pocDeliverables = [
-  "Databricks lakehouse in your AWS or GCP account",
-  "Production medallion pipelines",
-  "Large-scale feature store setup",
-  "End-to-end feature extraction pipelines",
-  "Batch and real-time inference endpoints",
-  "Agentic Ops live demonstration",
-  "Full handover documentation",
+  "Priority workflow, mapped and working",
+  "MCP servers looked up and wired",
+  "GitHub or GitLab connected to Cursor and Claude",
+  "Skills, repo access, and agent workflows",
+  "Human review steps your team can keep",
+  "Live walkthrough and handover notes",
 ] as const;
 
 export const challengePoints = [
   {
-    traditional: "6 to 12 month SI engagement",
-    ours: "PoC demo go-live in 14 days",
+    traditional: "6 to 12 month discovery",
+    ours: "Working PoC in 14 days",
   },
   {
-    traditional: "$200K+ before you see anything working",
+    traditional: "$200K+ before anything runs",
     ours: "$100 USD until you're satisfied",
   },
   {
     traditional: "AU, Dubai, or US rates ($150 to $350/hr)",
-    ours: "From $30 AUD/hr, same senior quality",
+    ours: "From $30 AUD/hr, senior oversight included",
   },
   {
-    traditional: "Offshore team in the wrong timezone",
-    ours: "Embedded in your team, your hours",
+    traditional: "An AI strategy deck and no setup",
+    ours: "Skills, MCP servers, access, and workflows",
   },
   {
-    traditional: "Manual runbooks and on-call firefighting",
-    ours: "Proactive monitoring and automated runbooks",
+    traditional: "Tools that never get connected",
+    ours: "Repos wired to Cursor and Claude",
   },
 ] as const;
 
 export const aboutStats = [
   { value: "10+", label: "Employees" },
-  { value: "5+", label: "Years in AU and US Data & ML" },
+  { value: "5+", label: "Years in data, ML, and AI" },
   { value: "14 days", label: "Typical PoC go-live" },
   { value: "4", label: "Global delivery hubs" },
-  { value: "3×", label: "Faster than traditional SIs" },
+  { value: "3×", label: "Faster than a long discovery" },
 ] as const;
 
 export const credentials = [
   "10+ employees across global delivery hubs",
-  "5+ years across Australian and US Data and ML industries",
+  "5+ years across Australian and US data, ML, and AI work",
   "Teams embedded across the US, Australia, Dubai, and Pakistan",
   "Far more cost effective than local AU, Dubai, and US consultancies",
-  "Intelligent tooling accelerates delivery without sacrificing senior oversight",
-  "Enterprise clients in fintech, health, government, and technology",
-  "PoC-first engagement: prove value before you scale spend",
+  "AI setup your team can run: skills, MCP servers, repo access, agent workflows",
+  "Named client quotes only where a client actually gave one",
+  "PoC-first engagement: prove it works before you scale spend",
 ] as const;
 
 export function getClientById(id: string): ClientLogo | undefined {
